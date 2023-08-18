@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  background-color: antiquewhite;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.cWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+
+#canvas {
+  border: 2px solid black;
+}
+
+#header {
+  padding: 20px;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+}
+
+#footer {
+  padding: 20px;
+  background-color: aliceblue;
+  margin-top: auto;
+}
