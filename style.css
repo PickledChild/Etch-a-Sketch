@@ -14,12 +14,21 @@ body {
 
 #canvasWrap {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   background-color: aliceblue;
   height: 500px;
   width: 500px;
+  margin: 0;
+}
+
+.cell {
+  flex: 1 1 calc(20%);
+  aspect-ratio: 1/1;
+  background-color: blueviolet;
+  border: 1px solid black;
 }
 
 #appWrapper {
@@ -75,13 +84,4 @@ body {
 
 .toolButton:hover {
   background-color: aqua;
-}
-
-.cell {
-  display: flex;
-  width: 50px;
-  padding-bottom: 50%;
-  flex-grow: 1;
-  background-color: blueviolet;
-  border: 1px solid black;
 }

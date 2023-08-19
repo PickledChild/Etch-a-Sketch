@@ -1,12 +1,20 @@
 //grid set up
 const gridContainer = document.querySelector("#canvasWrap");
+let cellCount = 30;
+const area = 25000;
+
+function columnNum() {
+  let cellArea = area / cellCount;
+  let column = Math.ceil(Math.sqrt(cellArea));
+  return column;
+}
 
 const gridBase = document.createElement("div");
-let gridCount = 16;
 
-for (let i = 0; i < gridCount; i++) {
+for (let i = 0; i < cellCount; i++) {
   let cell = document.createElement("div");
   cell.classList.add("cell");
-  cell.textContent = "hi";
   gridContainer.appendChild(cell);
 }
+
+console.log(columnNum());
