@@ -13,6 +13,10 @@ body {
 }
 
 #canvasWrap {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
   background-color: aliceblue;
   height: 500px;
   width: 500px;
@@ -71,4 +75,13 @@ body {
 
 .toolButton:hover {
   background-color: aqua;
+}
+
+.cell {
+  display: flex;
+  width: 50px;
+  padding-bottom: 50%;
+  flex-grow: 1;
+  background-color: blueviolet;
+  border: 1px solid black;
 }
