@@ -68,14 +68,18 @@ body {
   margin-top: 45px;
 }
 
-.toolButton {
+#blkButton,
+#rnbButton,
+#clrButton {
   height: 80px;
   border-style: none;
   border: 1px solid black;
   cursor: pointer;
 }
 
-.toolButton:hover,
+#blkButton:hover,
+#rnbButton:hover,
+#clrButton:hover,
 #inpButton:hover {
   background-color: aqua;
 }
@@ -88,6 +92,8 @@ body {
 }
 
 #canvasValue {
+  display: flex;
+  font-weight: bolder;
   width: 80px;
   height: 30px;
 }
@@ -95,4 +101,9 @@ body {
 .inpWrap {
   display: flex;
   flex-direction: column;
+}
+
+#inpCxt {
+  margin: 5px;
+  font-size: 12px;
 }

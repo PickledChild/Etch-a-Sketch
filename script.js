@@ -5,6 +5,10 @@ window.addEventListener("load", () => {
 const inpValue = document.querySelector("#canvasValue");
 const inpButton = document.querySelector("#inpButton");
 const canvas = document.querySelector("#canvasWrap");
+const blkButton = document.getElementById("blkButton");
+const rnbButton = document.getElementById("rnbButton");
+const clrButton = document.getElementById("clrButton");
+inpValue.defaultValue = 16;
 
 function setCanvas(gridInput) {
   side = Math.ceil(Math.sqrt(gridInput));
@@ -21,19 +25,18 @@ function setCanvas(gridInput) {
 }
 
 inpButton.addEventListener("click", () => {
-  let newInput = Number(inpValue.value);
+  let newInput = inpValue.value;
   if (newInput <= 0) {
     return alert("Please choose a number between 1 - 100!");
-  }
-  if (newInput > 100) {
+  } else if (newInput > 100) {
     return alert("Please choose a number between 1 - 100!");
-  }
-  if (newInput == NaN) {
+  } else if (isNaN(newInput)) {
     return alert("Please choose a number between 1 - 100!");
+  } else {
+    clearCanvas(canvas);
+    setCanvas(newInput);
+    console.log(typeof newInput);
   }
-  clearCanvas(canvas);
-  setCanvas(newInput);
-  console.log(newInput);
 });
 
 function clearCanvas(container) {
