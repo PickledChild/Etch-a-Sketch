@@ -13,11 +13,7 @@ body {
 }
 
 #canvasWrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  display: grid;
   background-color: aliceblue;
   height: 500px;
   width: 500px;
@@ -25,8 +21,6 @@ body {
 }
 
 .cell {
-  flex: 1 1 calc(20%);
-  aspect-ratio: 1/1;
   background-color: blueviolet;
   border: 1px solid black;
 }
