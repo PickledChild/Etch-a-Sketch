@@ -4,16 +4,16 @@ window.addEventListener("load", () => {
 
 const inpValue = document.querySelector("#canvasValue");
 const inpButton = document.querySelector("#inpButton");
+const canvas = document.querySelector("#canvasWrap");
 
 function setCanvas(gridInput) {
-  const canvas = document.querySelector("#canvasWrap");
-
   side = Math.ceil(Math.sqrt(gridInput));
+  area = side * side;
 
   canvas.style.gridTemplateColumns = `repeat(${side}, 1fr)`;
   canvas.style.gridTemplateRows = `repeat(${side}, 1fr)`;
 
-  for (let i = 0; i < gridInput; i++) {
+  for (let i = 0; i < area; i++) {
     let cell = document.createElement("div");
     cell.classList.add("cell");
     canvas.appendChild(cell);
@@ -21,6 +21,13 @@ function setCanvas(gridInput) {
 }
 
 inpButton.addEventListener("click", () => {
-  gridInput.textContent = newInput;
-  console.log(newInput);
+  let newInput = Number(inpValue.value);
+  clearCanvas(canvas);
+  setCanvas(newInput);
 });
+
+function clearCanvas(container) {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+}
