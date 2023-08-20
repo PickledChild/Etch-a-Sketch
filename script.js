@@ -1,12 +1,26 @@
+window.addEventListener("load", () => {
+  setCanvas(16);
+});
+
 const inpValue = document.querySelector("#canvasValue");
 const inpButton = document.querySelector("#inpButton");
-const canvas = document.querySelector("#canvasWrap");
-inpValue.defaultValue = 16;
-gridInput = inpValue.value;
 
-canvas.style.gridTemplateColumns = `repeat(${gridInput}, 1fr)`;
-canvas.style.gridTemplateRows = `repeat(${gridInput}, 1fr)`;
+function setCanvas(gridInput) {
+  const canvas = document.querySelector("#canvasWrap");
 
-function changeInput() {}
+  side = Math.ceil(Math.sqrt(gridInput));
 
-inpButton.addEventListener("click", changeInput);
+  canvas.style.gridTemplateColumns = `repeat(${side}, 1fr)`;
+  canvas.style.gridTemplateRows = `repeat(${side}, 1fr)`;
+
+  for (let i = 0; i < gridInput; i++) {
+    let cell = document.createElement("div");
+    cell.classList.add("cell");
+    canvas.appendChild(cell);
+  }
+}
+
+inpButton.addEventListener("click", () => {
+  gridInput.textContent = newInput;
+  console.log(newInput);
+});
