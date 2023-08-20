@@ -22,8 +22,18 @@ function setCanvas(gridInput) {
 
 inpButton.addEventListener("click", () => {
   let newInput = Number(inpValue.value);
+  if (newInput <= 0) {
+    return alert("Please choose a number between 1 - 100!");
+  }
+  if (newInput > 100) {
+    return alert("Please choose a number between 1 - 100!");
+  }
+  if (newInput == NaN) {
+    return alert("Please choose a number between 1 - 100!");
+  }
   clearCanvas(canvas);
   setCanvas(newInput);
+  console.log(newInput);
 });
 
 function clearCanvas(container) {

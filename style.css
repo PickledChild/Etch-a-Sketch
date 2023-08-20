@@ -62,20 +62,37 @@ body {
 #toolbar {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: darkgrey;
   height: 500px;
   margin-top: 45px;
 }
 
 .toolButton {
-  height: 40px;
-  width: 50px;
+  height: 80px;
   border-style: none;
   border: 1px solid black;
   cursor: pointer;
 }
 
-.toolButton:hover {
+.toolButton:hover,
+#inpButton:hover {
   background-color: aqua;
+}
+
+#inpButton {
+  border-style: none;
+  border: 1px solid black;
+  cursor: pointer;
+  height: 30px;
+}
+
+#canvasValue {
+  width: 80px;
+  height: 30px;
+}
+
+.inpWrap {
+  display: flex;
+  flex-direction: column;
 }
