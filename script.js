@@ -6,9 +6,6 @@ window.addEventListener("load", () => {
 const inpValue = document.querySelector("#canvasValue");
 const inpButton = document.querySelector("#inpButton");
 const canvas = document.querySelector("#canvasWrap");
-const clrPicker = document.getElementById("clrPicker");
-const rnbButton = document.getElementById("rnbButton");
-const clrButton = document.getElementById("clrButton");
 inpValue.defaultValue = 16;
 
 function setCanvas(gridInput) {
@@ -50,5 +47,3 @@ function clearCanvas(container) {
     container.removeChild(container.firstChild);
   }
 }
-
-//color handling
